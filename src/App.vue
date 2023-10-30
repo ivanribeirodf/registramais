@@ -4,7 +4,7 @@
 
     <div class="auth-wrapper">
       <div class="auth-inner">
-        <Login />
+        <Register />
       </div>
     </div>
  </div>
@@ -12,15 +12,14 @@
 
 <script>
   import Nav from './components/Nav.vue';
-
-  import Login from './components/Login.vue';
+import Register from './components/Register.vue';
 
   export default {
     name: 'App',
       components: {
-        Nav,
-        Login
-      }
+    Nav,
+    Register
+}
   }
 </script>
 

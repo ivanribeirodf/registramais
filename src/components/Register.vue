@@ -1,6 +1,6 @@
 <template>
 
-  <form>
+  <form @submit.prevent="handleSubmit">
 
     <h3>Sing Up</h3>
 
@@ -32,11 +32,16 @@
     <button class="btn btn-primary btn-block">Sign Up</button>
 
   </form>  
-  
+
 </template>
 
 <script>
   export default {
-    name: 'Register'
+    name: 'Register',
+    methods: {
+      handleSubmit(){     
+        console.log('submitted')
+      }
+    }
   }
 </script>
