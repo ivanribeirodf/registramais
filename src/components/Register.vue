@@ -50,27 +50,17 @@
       }
     },
     methods: {
-      handleSubmit(){
-        const data = {
+      async handleSubmit(){        
+        await axios.post('userCreate', {
           first_name: this.first_name,
           last_name: this.last_name,
           email: this.email,
           password: this.password,
-          password_confirm: this.password
-        };
-        
-        axios.post('https://localhost:8000/register', data)
-          .then(
-            res => {
-              console.log(res)
-            }
-          ).catch(
-            err => {
-              console.log(err)
-            }
-          )
-        
+          password_confirm: this.password_confirm
+        });        
+        this.$router.push('/login');
       }
+
     }
   }
 </script>
