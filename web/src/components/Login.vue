@@ -28,7 +28,7 @@
       async handleSubmit() {
         const response = await axios.post('login',{
           email: this.email,
-          passwordt: this.password
+          password: this.password
         });
         localStorage.setItem('token', response.data.token);
       }

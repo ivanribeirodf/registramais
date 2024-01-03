@@ -6,12 +6,12 @@
 
     <div class="form-group">
       <label>First Name</label>
-      <input type="text" class="form-control" v-model="first_name" placeholder="First Name" />
+      <input type="text" class="form-control" v-model="firstname" placeholder="First Name" />
     </div>
 
     <div class="form-group">
       <label>Last Name</label>
-      <input type="text" class="form-control" v-model="last_name" placeholder="Last Name" />
+      <input type="text" class="form-control" v-model="lastname" placeholder="Last Name" />
     </div>
 
     <div class="form-group">
@@ -23,12 +23,6 @@
       <label>Password</label>
       <input type="password" class="form-control" v-model="password" placeholder="Password" />
     </div>
-
-    <div class="form-group">
-      <label>Confirm Password</label>
-      <input type="password" class="form-control" v-model="password_confirm" placeholder="Confirm Password" />
-    </div>
-
     <button class="btn btn-primary btn-block">Sign Up</button>
 
   </form>  
@@ -41,8 +35,8 @@
     name: 'Register',
     data() {
       return {
-        first_name: '',
-        last_name: '',
+        firstname: '',
+        lastname: '',
         email: '',
         password: '',
         password_confirm: ''
@@ -51,12 +45,11 @@
     },
     methods: {
       async handleSubmit(){        
-        await axios.post('userCreate', {
-          first_name: this.first_name,
-          last_name: this.last_name,
+        await axios.post('users', {
+          firstname: this.firstname,
+          lastname: this.lastname,
           email: this.email,
           password: this.password,
-          password_confirm: this.password_confirm
         });        
         this.$router.push('/login');
       }
